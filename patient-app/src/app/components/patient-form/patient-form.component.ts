@@ -9,10 +9,11 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Patient, PatientService } from '../../services/patient.service';
+import { CommonModule } from '@angular/common';
 //  imports: [CommonModule, MatTableModule, RouterModule, FormsModule], //, FormsModule ??/
 
 @Component({
-  imports: [ReactiveFormsModule, FormsModule, RouterModule],
+  imports: [ReactiveFormsModule, FormsModule, RouterModule, CommonModule],
   selector: 'app-patient-form',
   templateUrl: './patient-form.component.html',
   styleUrls: ['./patient-form.component.scss'],
@@ -49,7 +50,6 @@ export class PatientFormComponent implements OnInit {
       this.patientService
         .getPatientById(this.patientId)
         .subscribe((patient) => {
-          // Patch the form values with the existing patient data
           this.patientForm.patchValue(patient);
         });
     }
