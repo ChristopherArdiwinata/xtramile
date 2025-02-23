@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
   Validators,
   ReactiveFormsModule,
+  FormsModule,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Patient, PatientService } from '../../services/patient.service';
+//  imports: [CommonModule, MatTableModule, RouterModule, FormsModule], //, FormsModule ??/
 
 @Component({
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FormsModule, RouterModule],
   selector: 'app-patient-form',
   templateUrl: './patient-form.component.html',
   styleUrls: ['./patient-form.component.scss'],
