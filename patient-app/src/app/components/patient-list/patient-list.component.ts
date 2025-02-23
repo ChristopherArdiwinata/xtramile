@@ -25,8 +25,9 @@ export class PatientListComponent implements OnInit {
     this.patientService
       .getPatients(this.page, this.size)
       .subscribe((response) => {
-        // Assuming the backend returns an object with content property that holds the list
         this.patients = response.content;
+        console.log(response)
+        console.log(this);
       });
   }
 
