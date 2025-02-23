@@ -1,5 +1,6 @@
 <div class="patient-list">
   <h2>Patient List</h2>
+  <button mat-button [routerLink]="['/patients/new']">add</button>
   <table mat-table [dataSource]="patients" class="mat-elevation-z8">
     <!-- Define table columns -->
     <ng-container matColumnDef="firstName">
