@@ -1,0 +1,40 @@
+<div class="patient-form">
+  <h2>{{ patientId ? 'Edit Patient' : 'Add New Patient' }}</h2>
+  <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" type="text" />
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" type="text" />
+
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input id="dateOfBirth" formControlName="dateOfBirth" type="date" />
+
+    <label for="gender">Gender:</label>
+    <select id="gender" formControlName="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <!-- Address Group -->
+    <div formGroupName="address">
+      <label for="addressLine">Address Line:</label>
+      <input id="addressLine" formControlName="addressLine" type="text" />
+
+      <label for="suburb">Suburb:</label>
+      <input id="suburb" formControlName="suburb" type="text" />
+
+      <label for="state">State:</label>
+      <input id="state" formControlName="state" type="text" />
+
+      <label for="postcode">Postcode:</label>
+      <input id="postcode" formControlName="postcode" type="text" />
+    </div>
+
+    <label for="phoneNo">Phone Number:</label>
+    <input id="phoneNo" formControlName="phoneNo" type="text" />
+
+    <button type="submit">{{ patientId ? 'Update' : 'Create' }} Patient</button>
+  </form>
+</div>
